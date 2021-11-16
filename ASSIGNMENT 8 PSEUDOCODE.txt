@@ -1,0 +1,26 @@
+DECLARE str1, str2 as string
+DECLARE count as integer
+DECLARE char1 as character
+DECLARE cChar as character
+
+cChar = ''
+str1 = ""
+count = 0
+char1 = ''
+str2 = ""
+
+OUTPUT "Enter a string you want to manipulate: "
+INPUT str1
+
+char1 = LEFT(str1,1)
+FOR count = 2 to LEN(str1)
+	cChar = MID(str1,count,1)
+	IF cChar = char1 THEN
+		str2 = str2 + '*'
+	ELSE
+		str2 = str2 + cChar
+	ENDIF
+NEXT
+
+OUTPUT "The final string is: " + char1 + str2 
+	 

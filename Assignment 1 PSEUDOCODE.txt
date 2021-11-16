@@ -1,0 +1,32 @@
+Declare str1 as STRING
+Declare str2 as STRING
+Declare count as INTEGER
+Declare char1 as CHARACTER
+Declare pos as INTEGER
+Declare anagram as Boolean
+
+pos - 0
+str1 - ""
+str2 - "abcdefghijklmnopqrstuvwxyz"
+count - 0
+char1 - ''
+anagram - True
+
+OUTPUT"Enter a string to find wether it is an anagram or not: "
+INPUT str1
+str1? LOWER(str1)
+
+FOR count = 1 to LEN(str1)
+   char1 = MID(str1,count,1)
+   pos = LOCATE(char1,str2)
+   IF pos = 0 THEN
+      anagram = False
+      Exit For
+   End IF
+NEXT
+
+IF anagram ? true THEN
+   OUTPUT "Entered string is an anagram"
+ELSE
+   OUTPUT"Entered string is not an anagram"
+End IF    
